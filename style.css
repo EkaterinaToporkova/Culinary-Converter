@@ -1,194 +1,186 @@
 @font-face {
-    font-family: 'SeoulNamsan CEB';
-    src: url('./fonts/SeN-CEB.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+  font-family: "SeoulNamsan CEB";
+  src: url("./fonts/SeN-CEB.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 /**
   Нормализация блочной модели
  */
- *,
- *::before,
- *::after {
-   box-sizing: border-box;
- }
- 
- /**
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
    Убираем внутренние отступы слева тегам списков,
    у которых есть атрибут class
   */
- :where(ul, ol):where([class]) {
-   padding-left: 0;
- }
- 
- /**
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
    Убираем внешние отступы body и двум другим тегам,
    у которых есть атрибут class
   */
- body,
- :where(blockquote, figure):where([class]) {
-   margin: 0;
- }
- 
- /**
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
    Убираем внешние отступы вертикали нужным тегам,
    у которых есть атрибут class
   */
- :where(
-   h1,
-   h2,
-   h3,
-   h4,
-   h5,
-   h6,
-   p,
-   ul,
-   ol,
-   dl
- ):where([class]) {
-   margin-block: 0;
- }
- 
- :where(dd[class]) {
-   margin-left: 0;
- }
- 
- :where(fieldset[class]) {
-   margin-left: 0;
-   padding: 0;
-   border: none;
- }
- 
- /**
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
    Убираем стандартный маркер маркированному списку,
    у которого есть атрибут class
   */
- :where(ul[class]) {
-   list-style: none;
- }
- 
- /**
+:where(ul[class]) {
+  list-style: none;
+}
+
+/**
    Обнуляем вертикальные внешние отступы параграфа,
    объявляем локальную переменную для внешнего отступа вниз,
    чтобы избежать взаимодействие с более сложным селектором
   */
- p {
-   --paragraphMarginBottom: 24px;
- 
-   margin-block: 0;
- }
- 
- /**
+p {
+  --paragraphMarginBottom: 24px;
+
+  margin-block: 0;
+}
+
+/**
    Внешний отступ вниз для параграфа без атрибута class,
    который расположен не последним среди своих соседних элементов
   */
- p:where(:not([class]):not(:last-child)) {
-   margin-bottom: var(--paragraphMarginBottom);
- }
- 
- 
- /**
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
    Упрощаем работу с изображениями
   */
- img {
-   display: block;
-   max-width: 100%;
- }
- 
- /**
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
    Наследуем свойства шрифт для полей ввода
   */
- input,
- textarea,
- select,
- button {
-   font: inherit;
- }
- 
- html {
-   /**
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
      Пригодится в большинстве ситуаций
      (когда, например, нужно будет "прижать" футер к низу сайта)
     */
-   height: 100%;
- }
- 
- /**
+  height: 100%;
+}
+
+/**
    Плавный скролл
   */
- html,
- :has(:target) {
-   scroll-behavior: smooth;
- }
- 
- body {
-   /**
-     Пригодится в большинстве ситуаций
-     (когда, например, нужно будет "прижать" футер к низу сайта)
-    */
-   min-height: 100%;
-   /**
-     Унифицированный интерлиньяж
-    */
-   line-height: 1.5;
- }
- 
- /**
-   Приводим к единому цвету svg-элементы
-  */
- svg *[fill] { fill: currentColor }
- svg *[stroke] { stroke: currentColor }
- 
- /**
-   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
-  */
- svg * {
-   transition-property: fill, stroke;
- }
- 
- /**
-   Удаляем все анимации и переходы для людей,
-   которые предпочитают их не использовать
-  */
- @media (prefers-reduced-motion: reduce) {
-   * {
-     animation-duration: 0.01ms !important;
-     animation-iteration-count: 1 !important;
-     transition-duration: 0.01ms !important;
-     scroll-behavior: auto !important;
-   }
- }
-
- /* Глобальные CSS переменные */
-
- :root {
-    --color-text: #303030;
-    --color-input: #A9D08E;
-    --color-light: #FEFEFE;
-    --color-light-gray: #C4C4C4;
-    --color-blue: #8ABAD3;
-
-    --border-radius: 10px;
-
-    --font-family-base: 'SeoulNamsan CEB', sans-serif;
-
-    --input-height: 93px;
-    --button-height: 42px;
-    --convert-height: 62px;
-
-    --container-width: 1198px;
-    --container-padding-x: 15px;
-
-    --transition-duration: 0.2s;
+html,
+:has(:target) {
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: var(--font-family-base);
-    background-color: var(--color-blue);
-    color: var(--color-text);
-    font-size: 25px;
+  /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+  min-height: 100%;
+  /**
+     Унифицированный интерлиньяж
+    */
+  line-height: 1.5;
+}
+
+/**
+   Приводим к единому цвету svg-элементы
+  */
+svg *[fill] {
+  fill: currentColor;
+}
+svg *[stroke] {
+  stroke: currentColor;
+}
+
+/**
+   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+  */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+   Удаляем все анимации и переходы для людей,
+   которые предпочитают их не использовать
+  */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Глобальные CSS переменные */
+
+:root {
+  --color-text: #303030;
+  --color-input: #a9d08e;
+  --color-light: #fefefe;
+  --color-light-gray: #c4c4c4;
+  --color-blue: #8abad3;
+
+  --border-radius: 10px;
+
+  --font-family-base: "SeoulNamsan CEB", sans-serif;
+
+  --input-height: 93px;
+  --button-height: 42px;
+  --convert-height: 62px;
+
+  --container-width: 1300px;
+  --container-padding-x: 15px;
+
+  --transition-duration: 0.2s;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: #f0f0f0;
+  color: var(--color-text);
+  font-size: 16px;
 }
 
 a {
@@ -199,18 +191,26 @@ a:hover {
   color: var(--color-light-gray);
 }
 
-a, button, input, textarea, svg * {
+a,
+button,
+input,
+textarea,
+svg * {
   transition-duration: var(--transition-duration);
 }
 
-
 .container {
-    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
-    margin-inline: auto;
-    padding-inline: var(--container-padding-x);
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -220,28 +220,59 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   align-items: center;
   column-gap: 20px;
+  padding: 5px 32px;
+  background-color: var(--color-blue);
 }
 
 .header-menu-list {
   display: flex;
-  column-gap: 34px;
+  column-gap: 50px;
+  flex-wrap: wrap;
 }
 
 .header-menu-link {
   display: inline-flex;
+  height: 90px;
   align-items: center;
-   text-decoration: none;
-   text-transform: uppercase;
-   font-weight: 700;
-   font-size: 12px;
-   column-gap: 7px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  column-gap: 7px;
+  /* line-height: normal; */
+  letter-spacing: 1.2px;
 }
 
 .header-menu-link.is-current::after {
-  content:"";
+  content: "";
   width: 5px;
   height: 5px;
   background-color: currentColor;
   border-radius: 50%;
+}
 
+@media (max-width: 480px) {
+  .header {
+    flex-wrap: wrap;
+    padding-top: 10px;
+    row-gap: 10px;
+    padding-inline: 15px;
+    justify-content: center;
+  }
+
+  .header-logo {
+  }
+
+  .header-menu {
+    flex-basis: 100%;
+  }
+
+  .header-menu-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-menu-link {
+    height: 32px;
+  }
 }
