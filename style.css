@@ -205,6 +205,20 @@ svg * {
   padding-inline: var(--container-padding-x);
 }
 
+/* .visually-hidden - скрываем текст */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 h1,
 h2,
 h3,
@@ -232,21 +246,20 @@ h6 {
 
 .header-menu-link {
   display: inline-flex;
-  height: 90px;
+  height: 57px;
   align-items: center;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
   column-gap: 7px;
-  /* line-height: normal; */
   letter-spacing: 1.2px;
 }
 
 .header-menu-link.is-current::after {
   content: "";
   width: 5px;
-  height: 5px;
+  aspect-ratio: 1;
   background-color: currentColor;
   border-radius: 50%;
 }
@@ -258,9 +271,6 @@ h6 {
     row-gap: 10px;
     padding-inline: 15px;
     justify-content: center;
-  }
-
-  .header-logo {
   }
 
   .header-menu {
@@ -276,3 +286,23 @@ h6 {
     height: 32px;
   }
 }
+
+.converter {
+  padding: 0px 83px;
+  min-height: 960px;
+}
+
+.converter-title {
+  text-transform: uppercase;
+  font-size: 32px;
+  line-height: normal;
+  text-align: center;
+}
+
+.calculator {
+  display: flex;
+}
+
+/* .calculator input[type="text"] {
+  display: block;
+} */

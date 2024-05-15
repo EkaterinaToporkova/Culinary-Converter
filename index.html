@@ -32,5 +32,66 @@
         </ul>
       </nav>
     </header>
+    <main class="content">
+      <h1 class="visually-hidden">Culinary Converter</h1>
+      <section class="converter">
+        <h2 class="visually-hidden">Calculation of ingredients</h2>
+        <div class="converter-title">
+          <h3>КУЛИНАРНЫЙ КОНВЕРТЕР</h3>
+        </div>
+        <div class="calculator">
+          <form action="" method="GET">
+            <!-- Продукт -->
+            <label for="product"><h3>Продукт</h3></label>
+            <select>
+              <option selected disabled>Введите или выберите из списка</option>
+              <!-- https://ru.stackoverflow.com/questions/1477054/%D0%9A%D0%B0%D0%BA-%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C-%D0%B2%D1%8B%D0%BF%D0%B0%D0%B4%D0%B0%D1%8E%D1%89%D0%B8%D0%B9-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D1%81-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D0%B2%D0%B2%D0%BE%D0%B4%D0%B0-%D0%BA%D0%B0%D0%BA-%D0%B2-input-type-text-%D0%B8-%D0%B2%D0%BE%D0%B7 -->
+              <option value="peanut">Арахис</option>
+              <option value="cherry">Вишня</option>
+              <option value="water">Вода</option>
+            </select>
+            <!--  -->
+            <!-- Параметр измерения -->
+            <label for="parameter"><h3>Параметр измерения</h3></label>
+            <!-- Вес -->
+            <label for="weight">Вес</label>
+            <input
+              type="radio"
+              id="weight"
+              value="weight"
+              name="parameter_radio"
+            />
+            <!-- Объем -->
+            <label for="volume">Объем</label>
+            <input
+              type="radio"
+              id="volume"
+              value="volume"
+              name="parameter_radio"
+            />
+            <!--  -->
+            <!-- Количество -->
+            <label for="count"><h3>Количество</h3></label>
+            <input type="number" min="0" id="count" value="0" />
+            <input type="text" placeholder="Грамм" /> <br />
+            <!--  -->
+            <!-- Во что конвертировать -->
+            <label for="product"><h3>Во что конвертировать</h3></label>
+            <select id="product">
+              <option disabled selected value>Выберите из списка</option>
+              <option value="gram">Грамм</option>
+              <option value="glass">Стакан</option>
+              <option value="milliliter">Миллилитр</option>
+            </select>
+            <br />
+            <!--  -->
+            <!-- Сбросить / Отправить -->
+            <input type="reset" />
+            <input type="submit" />
+          </form>
+          <div class="history"></div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
