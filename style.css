@@ -170,7 +170,7 @@ svg * {
   --button-height: 42px;
   --convert-height: 62px;
 
-  --container-width: 1300px;
+  --container-width: 960px;
   --container-padding-x: 15px;
 
   --transition-duration: 0.2s;
@@ -264,6 +264,48 @@ h6 {
   border-radius: 50%;
 }
 
+.converter-title {
+  text-transform: uppercase;
+  font-size: 32px;
+  line-height: normal;
+  text-align: center;
+}
+
+.calculator {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.history_image {
+  background-image: url(/images/note.png);
+  background-size: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  width: 400px;
+}
+
+.history_content {
+  font-size: 16px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  max-width: 325px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.history_content p {
+  text-align: center;
+  padding-top: 30px;
+}
+
+@media (max-width: 750px) {
+  .calculator {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 480px) {
   .header {
     flex-wrap: wrap;
@@ -286,23 +328,3 @@ h6 {
     height: 32px;
   }
 }
-
-.converter {
-  padding: 0px 83px;
-  min-height: 960px;
-}
-
-.converter-title {
-  text-transform: uppercase;
-  font-size: 32px;
-  line-height: normal;
-  text-align: center;
-}
-
-.calculator {
-  display: flex;
-}
-
-/* .calculator input[type="text"] {
-  display: block;
-} */
