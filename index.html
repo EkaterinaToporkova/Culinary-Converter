@@ -44,34 +44,36 @@
             <form action="" method="GET">
               <!-- Продукт -->
               <label for="product"><h3>Продукт</h3></label>
-              <select>
-                <option selected disabled>
-                  Введите или выберите из списка
-                </option>
-                <!-- https://ru.stackoverflow.com/questions/1477054/%D0%9A%D0%B0%D0%BA-%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C-%D0%B2%D1%8B%D0%BF%D0%B0%D0%B4%D0%B0%D1%8E%D1%89%D0%B8%D0%B9-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D1%81-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D0%B2%D0%B2%D0%BE%D0%B4%D0%B0-%D0%BA%D0%B0%D0%BA-%D0%B2-input-type-text-%D0%B8-%D0%B2%D0%BE%D0%B7 -->
-                <option value="peanut">Арахис</option>
-                <option value="cherry">Вишня</option>
-                <option value="water">Вода</option>
-              </select>
+              <label class="form_group">
+                <select>
+                  <option selected disabled>
+                    Введите или выберите из списка
+                  </option>
+                  <!-- https://ru.stackoverflow.com/questions/1477054/%D0%9A%D0%B0%D0%BA-%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C-%D0%B2%D1%8B%D0%BF%D0%B0%D0%B4%D0%B0%D1%8E%D1%89%D0%B8%D0%B9-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D1%81-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D0%B2%D0%B2%D0%BE%D0%B4%D0%B0-%D0%BA%D0%B0%D0%BA-%D0%B2-input-type-text-%D0%B8-%D0%B2%D0%BE%D0%B7 -->
+                  <option value="peanut">Арахис</option>
+                  <option value="cherry">Вишня</option>
+                  <option value="water">Вода</option>
+                </select>
+              </label>
               <!--  -->
               <!-- Параметр измерения -->
               <label for="parameter"><h3>Параметр измерения</h3></label>
               <!-- Вес -->
-              <label for="weight">Вес</label>
-              <input
-                type="radio"
-                id="weight"
-                value="weight"
-                name="parameter_radio"
-              />
+              <div class="form_radio_btn">
+                <input
+                  id="radio-1"
+                  type="radio"
+                  name="radio"
+                  value="1"
+                  checked
+                />
+                <label for="radio-1">Вес</label>
+              </div>
               <!-- Объем -->
-              <label for="volume">Объем</label>
-              <input
-                type="radio"
-                id="volume"
-                value="volume"
-                name="parameter_radio"
-              />
+              <div class="form_radio_btn">
+                <input id="radio-2" type="radio" name="radio" value="2" />
+                <label for="radio-2">Объем</label>
+              </div>
               <!--  -->
               <!-- Количество -->
               <label for="count"><h3>Количество</h3></label>
@@ -86,12 +88,14 @@
               <!--  -->
               <!-- Во что конвертировать -->
               <label for="product"><h3>Во что конвертировать</h3></label>
-              <select id="product">
-                <option disabled selected value>Выберите из списка</option>
-                <option value="gram">Грамм</option>
-                <option value="glass">Стакан</option>
-                <option value="milliliter">Миллилитр</option>
-              </select>
+              <label class="form_group">
+                <select id="product">
+                  <option disabled selected value>Выберите из списка</option>
+                  <option value="gram">Грамм</option>
+                  <option value="glass">Стакан</option>
+                  <option value="milliliter">Миллилитр</option>
+                </select>
+              </label>
               <br />
               <!--  -->
               <!-- Сбросить / Отправить -->

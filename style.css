@@ -162,12 +162,12 @@ svg * {
   --color-light-gray: #c4c4c4;
   --color-blue: #8abad3;
 
-  --border-radius: 10px;
+  --border-radius: 6px;
 
   --font-family-base: "SeoulNamsan CEB", sans-serif;
 
-  --input-height: 93px;
-  --button-height: 42px;
+  --input-height: 45px;
+  --button-height: 34px;
   --convert-height: 62px;
 
   --container-width: 960px;
@@ -188,7 +188,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-light-gray);
+  color: #666;
 }
 
 a,
@@ -273,8 +273,65 @@ h6 {
 
 .calculator {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 60px;
   flex-wrap: wrap;
+}
+
+.form_group {
+  position: relative;
+  display: inline-block;
+}
+
+.form_group select {
+  height: var(--input-height);
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 15px;
+  padding-right: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url(/images/arrow_new.png) no-repeat right;
+  background-color: var(--color-input);
+  border-radius: var(--border-radius);
+  background-position-x: calc(100% - 6px);
+  cursor: pointer;
+  border: none;
+}
+
+.form_radio_btn {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.form_radio_btn input[type="radio"] {
+  display: none;
+}
+
+.form_radio_btn label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0px 15px;
+  line-height: var(--button-height);
+  border-radius: var(--border-radius);
+  background-color: var(--color-light-gray);
+  user-select: none;
+}
+
+/* Checked */
+.form_radio_btn input[type="radio"]:checked + label {
+  background: var(--color-input);
+}
+
+/* Hover */
+.form_radio_btn label:hover {
+  color: #666;
+}
+
+/* Disabled */
+.form_radio_btn input[type="radio"]:disabled + label {
+  background: #efefef;
+  color: #666;
 }
 
 .history_image {
