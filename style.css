@@ -1,381 +1,94 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
-/**
-  Нормализация блочной модели
- */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/* Общие стили */
 
-/**
-   Убираем внутренние отступы слева тегам списков,
-   у которых есть атрибут class
-  */
-:where(ul, ol):where([class]) {
-  padding-left: 0;
-}
-
-/**
-   Убираем внешние отступы body и двум другим тегам,
-   у которых есть атрибут class
-  */
-body,
-:where(blockquote, figure):where([class]) {
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #fdfbf8;
+  color: #303030;
   margin: 0;
 }
 
-/**
-   Убираем внешние отступы вертикали нужным тегам,
-   у которых есть атрибут class
-  */
-:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
-  margin-block: 0;
-}
-
-:where(dd[class]) {
-  margin-left: 0;
-}
-
-:where(fieldset[class]) {
-  margin-left: 0;
-  padding: 0;
-  border: none;
-}
-
-/**
-   Убираем стандартный маркер маркированному списку,
-   у которого есть атрибут class
-  */
-:where(ul[class]) {
-  list-style: none;
-}
-
-/**
-   Обнуляем вертикальные внешние отступы параграфа,
-   объявляем локальную переменную для внешнего отступа вниз,
-   чтобы избежать взаимодействие с более сложным селектором
-  */
-p {
-  --paragraphMarginBottom: 24px;
-
-  margin-block: 0;
-}
-
-/**
-   Внешний отступ вниз для параграфа без атрибута class,
-   который расположен не последним среди своих соседних элементов
-  */
-p:where(:not([class]):not(:last-child)) {
-  margin-bottom: var(--paragraphMarginBottom);
-}
-
-/**
-   Упрощаем работу с изображениями
-  */
-img {
-  display: block;
-  max-width: 100%;
-}
-
-/**
-   Наследуем свойства шрифт для полей ввода
-  */
-input,
-textarea,
-select,
-button {
-  font: inherit;
-}
-
-html {
-  /**
-     Пригодится в большинстве ситуаций
-     (когда, например, нужно будет "прижать" футер к низу сайта)
-    */
-  height: 100%;
-}
-
-/**
-   Плавный скролл
-  */
-html,
-:has(:target) {
-  scroll-behavior: smooth;
-}
-
-body {
-  /**
-     Пригодится в большинстве ситуаций
-     (когда, например, нужно будет "прижать" футер к низу сайта)
-    */
-  min-height: 100%;
-  /**
-     Унифицированный интерлиньяж
-    */
-  line-height: 1.5;
-}
-
-/**
-   Приводим к единому цвету svg-элементы
-  */
-svg *[fill] {
-  fill: currentColor;
-}
-svg *[stroke] {
-  stroke: currentColor;
-}
-
-/**
-   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
-  */
-svg * {
-  transition-property: fill, stroke;
-}
-
-/**
-   Удаляем все анимации и переходы для людей,
-   которые предпочитают их не использовать
-  */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Глобальные CSS переменные */
-
-:root {
-  --color-text: #303030;
-  --color-input: #a9d08e;
-  --color-light: #fefefe;
-  --color-light-gray: #c4c4c4;
-  --color-blue: #8abad3;
-
-  --border-radius: 6px;
-
-  --font-family-base: "Roboto", sans-serif;
-
-  --input-height: 45px;
-  --button-height: 34px;
-  --convert-height: 62px;
-
-  --container-width: 960px;
-  --container-padding-x: 15px;
-
-  --transition-duration: 0.2s;
-}
-
-body {
-  font-family: var(--font-family-base);
-  background-color: #f0f0f0;
-  color: var(--color-text);
-  font-size: 16px;
-}
-
 a {
-  color: var(--color-text);
+  color: #ffffff;
+  text-decoration: none;
 }
 
-a:hover {
-  color: #666;
-}
-
-a,
-button,
-input,
-textarea,
-svg * {
-  transition-duration: var(--transition-duration);
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .container {
-  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
-  margin-inline: auto;
-  padding-inline: var(--container-padding-x);
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-/* .visually-hidden - скрываем текст */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  text-transform: uppercase;
-}
+/* Шапка */
 
 .header {
+  background-color: #779d77;
+}
+
+.header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  column-gap: 20px;
-  padding: 5px 32px;
-  background-color: var(--color-blue);
+  font-weight: 500;
+  color: #ffffff;
 }
 
-.header-menu-list {
+.logo {
   display: flex;
-  column-gap: 50px;
-  flex-wrap: wrap;
-}
-
-.header-menu-link {
-  display: inline-flex;
-  height: 57px;
   align-items: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 12px;
-  column-gap: 7px;
-  letter-spacing: 1.2px;
+  gap: 45px;
 }
 
-.header-menu-link.is-current::after {
-  content: "";
-  width: 5px;
-  aspect-ratio: 1;
-  background-color: currentColor;
-  border-radius: 50%;
+.logo p {
+  font-size: 24px;
+  width: 50%;
 }
 
-.converter-title {
-  text-transform: uppercase;
-  font-size: 32px;
-  line-height: normal;
-  text-align: center;
-}
-
-.calculator {
+.header__list {
   display: flex;
+  gap: 40px;
+}
+
+.header__nav a {
+  font-size: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.header__nav a.active {
+  opacity: 1;
+}
+
+.header__nav a:hover {
+  opacity: 0.9;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 60px;
-  flex-wrap: wrap;
-}
 
-.form_group {
-  position: relative;
-  display: inline-block;
-}
+  width: 149px;
+  height: 41px;
 
-.form_group select {
-  height: var(--input-height);
-  padding-top: 0px;
-  padding-bottom: 0px;
-  padding-left: 15px;
-  padding-right: 25px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: url(/images/arrow_new.png) no-repeat right;
-  background-color: var(--color-input);
-  border-radius: var(--border-radius);
-  background-position-x: calc(100% - 6px);
-  cursor: pointer;
-  border: none;
-}
-
-.form_radio_btn {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.form_radio_btn input[type="radio"] {
-  display: none;
-}
-
-.form_radio_btn label {
-  display: inline-block;
-  cursor: pointer;
-  padding: 0px 15px;
-  line-height: var(--button-height);
-  border-radius: var(--border-radius);
-  background-color: var(--color-light-gray);
-  user-select: none;
-}
-
-/* Checked */
-.form_radio_btn input[type="radio"]:checked + label {
-  background: var(--color-input);
-}
-
-/* Hover */
-.form_radio_btn label:hover {
-  color: #666;
-}
-
-/* Disabled */
-.form_radio_btn input[type="radio"]:disabled + label {
-  background: #efefef;
-  color: #666;
-}
-
-.history_image {
-  background-image: url(/images/note.png);
-  background-size: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 400px;
-  width: 400px;
-}
-
-.history_content {
   font-size: 16px;
-  padding: 10px 10px;
-  border-radius: 5px;
-  max-width: 325px;
-  margin-left: 30px;
-  margin-top: 30px;
+  font-weight: 500;
+  color: #ffffff;
+
+  background: #779d77;
+  border-radius: 6px;
+  border: none;
+
+  transition: opacity 0.3s;
 }
 
-.history_content p {
-  text-align: center;
-  padding-top: 30px;
-}
-
-@media (max-width: 750px) {
-  .calculator {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .header {
-    flex-wrap: wrap;
-    padding-top: 10px;
-    row-gap: 10px;
-    padding-inline: 15px;
-    justify-content: center;
-  }
-
-  .header-menu {
-    flex-basis: 100%;
-  }
-
-  .header-menu-list {
-    display: flex;
-    justify-content: center;
-  }
-
-  .header-menu-link {
-    height: 32px;
-  }
+.btn:hover {
+  opacity: 0.8;
 }
