@@ -9,6 +9,12 @@ body {
   margin: 0;
 }
 
+.container {
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 a {
   color: #ffffff;
   text-decoration: none;
@@ -20,10 +26,14 @@ ul {
   margin: 0;
 }
 
-.container {
-  max-width: 1420px;
-  margin: 0 auto;
-  padding: 0 15px;
+.wrapper {
+  padding: 84px 100px;
+}
+
+.shadow_content {
+  background-color: #ffffff;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
 }
 
 /* Шапка */
@@ -70,6 +80,37 @@ ul {
   opacity: 0.9;
 }
 
+/* Конвертер */
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
+}
+.wrapper_title {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0px;
+}
+
+.fields_input {
+  padding: 40px 40px;
+}
+
+.result {
+  color: #779d77;
+  font-size: 64px;
+  font-weight: 700;
+}
+
 .btn {
   display: flex;
   align-items: center;
@@ -91,4 +132,20 @@ ul {
 
 .btn:hover {
   opacity: 0.8;
+}
+
+.history_content {
+  flex-grow: 1;
+}
+
+.history {
+  display: inline-block;
+  background-color: #faf8e5;
+  padding: 20px 20px;
+}
+
+.history p {
+  margin: 0px;
+  font-size: 20px;
+  font-weight: 500;
 }
