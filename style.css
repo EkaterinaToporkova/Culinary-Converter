@@ -32,7 +32,7 @@ ul {
 
 .shadow_content {
   background-color: #ffffff;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
 }
 
@@ -105,6 +105,8 @@ ul {
   padding: 40px 40px;
 }
 
+
+
 .result {
   color: #779d77;
   font-size: 64px;
@@ -136,16 +138,28 @@ ul {
 
 .history_content {
   flex-grow: 1;
+  background-image: url(./images/food.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 600px;
+  height: 638px;
 }
 
 .history {
   display: inline-block;
   background-color: #faf8e5;
   padding: 20px 20px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
-.history p {
+.history h4 {
   margin: 0px;
   font-size: 20px;
   font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.history__item {
+  margin-bottom: 20px;
 }
