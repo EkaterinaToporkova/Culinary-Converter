@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Продуктовый конвертер</title>
+
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -43,67 +44,79 @@
                 <div class="fields_input">
                   <form action="" method="GET">
                     <!-- Продукт -->
-                    <label for="product"><h3>Продукт</h3></label>
-                    <label class="form_group">
-                      <select>
-                        <option selected disabled>
-                          Введите или выберите из списка
-                        </option>
-                        <!-- https://ru.stackoverflow.com/questions/1477054/%D0%9A%D0%B0%D0%BA-%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C-%D0%B2%D1%8B%D0%BF%D0%B0%D0%B4%D0%B0%D1%8E%D1%89%D0%B8%D0%B9-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D1%81-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D0%B2%D0%B2%D0%BE%D0%B4%D0%B0-%D0%BA%D0%B0%D0%BA-%D0%B2-input-type-text-%D0%B8-%D0%B2%D0%BE%D0%B7 -->
-                        <option value="peanut">Арахис</option>
-                        <option value="cherry">Вишня</option>
-                        <option value="water">Вода</option>
-                      </select>
-                    </label>
+                    <label for="product"><p>Продукт</p></label>
+                    <select id="product" class="form__group">
+                      <option disabled selected value>
+                        Введите или выберите из списка
+                      </option>
+                      <option value="peanut">Арахис</option>
+                      <option value="cherry">Вишня</option>
+                      <option value="water">Вода</option>
+                    </select>
                     <!--  -->
                     <!-- Параметр измерения -->
-                    <label for="parameter"><h3>Параметр измерения</h3></label>
+                    <label for="parameter"><p>Параметр измерения</p></label>
                     <!-- Вес -->
-                    <div class="form_radio_btn">
-                      <input
-                        id="radio-1"
-                        type="radio"
-                        name="radio"
-                        value="1"
-                        checked
-                      />
-                      <label for="radio-1">Вес</label>
-                    </div>
-                    <!-- Объем -->
-                    <div class="form_radio_btn">
-                      <input id="radio-2" type="radio" name="radio" value="2" />
-                      <label for="radio-2">Объем</label>
+                    <div class="radio__group">
+                      <div class="form__radio__btn">
+                        <input
+                          id="radio-1"
+                          type="radio"
+                          name="radio"
+                          value="1"
+                          checked
+                        />
+                        <label for="radio-1">Вес</label>
+                      </div>
+                      <!-- Объем -->
+                      <div class="form__radio__btn">
+                        <input
+                          id="radio-2"
+                          type="radio"
+                          name="radio"
+                          value="2"
+                        />
+                        <label for="radio-2">Объем</label>
+                      </div>
                     </div>
                     <!--  -->
                     <!-- Количество -->
-                    <label for="count"><h3>Количество</h3></label>
-                    <input type="number" min="0" id="count" value="0" />
-                    <select id="parameter_select">
-                      <option disabled selected value>
-                        Выберите из списка
-                      </option>
-                      <option value="parameter_gram">Грамм</option>
-                      <option value="parameter_kilogram">Килограмм</option>
-                      <option value="parameter_ounce">Унция</option>
-                      <option value="parameter_lb">Фунт</option>
-                    </select>
+                    <label for="count"><p>Количество</p></label>
+                    <div class="input__count__parametr">
+                      <input type="number" min="0" id="count" value="0" />
+                      <select id="parameter_select">
+                        <option disabled selected value>Мера</option>
+                        <option value="parameter_gram">Грамм</option>
+                        <option value="parameter_kilogram">Килограмм</option>
+                        <option value="parameter_ounce">Унция</option>
+                        <option value="parameter_lb">Фунт</option>
+                      </select>
+                    </div>
                     <!--  -->
                     <!-- Во что конвертировать -->
-                    <label for="product"><h3>Во что конвертировать</h3></label>
-                    <label class="form_group">
-                      <select id="product">
-                        <option disabled selected value>
-                          Выберите из списка
-                        </option>
-                        <option value="gram">Грамм</option>
-                        <option value="glass">Стакан</option>
-                        <option value="milliliter">Миллилитр</option>
-                      </select>
-                    </label>
+                    <label for="product"><p>Во что пересчитать</p></label>
+                    <select id="product" class="form__group">
+                      <option disabled selected value>
+                        Мера или мерный продукт
+                      </option>
+                      <option value="gram">Грамм</option>
+                      <option value="glass">Стакан</option>
+                      <option value="milliliter">Миллилитр</option>
+                    </select>
                     <!--  -->
                     <!-- Сбросить / Отправить -->
-                    <input type="reset" />
-                    <input type="submit" class="btn" />
+                    <div class="reset__and__calculate">
+                      <div class="reset__btn">
+                        <img src="./icons/close.svg" alt="" />
+                        <input type="reset" value="Очистить поля" id="reset" />
+                      </div>
+                      <input
+                        type="submit"
+                        class="btn"
+                        value="Рассчитать"
+                        id="calculate"
+                      />
+                    </div>
                   </form>
                 </div>
               </div>
@@ -123,5 +136,6 @@
         </div>
       </section>
     </main>
+    <script src="./main.js"></script>
   </body>
 </html>
