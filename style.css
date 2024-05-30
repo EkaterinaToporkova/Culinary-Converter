@@ -28,6 +28,10 @@ ul {
 
 .wrapper {
   padding: 84px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
 }
 
 .shadow_content {
@@ -83,12 +87,6 @@ ul {
 
 /* Конвертер */
 
-.wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-}
 
 .calculator {
   display: flex;
@@ -118,27 +116,50 @@ ul {
   margin-block: 0;
 }
 
-.form__group {
+
+.input__count__parametr input {
+  box-sizing: border-box;
+  height: 52px;
+  width: 240px;
+  font-size: 15px;
+  color: #9f9f9f;
+  border: 1px solid #779d77;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.form__group,
+.input__count__parametr select,
+.input__count__parametr input {
   width: 500px;
   height: 52px;
   font-size: 15px;
   color: #9f9f9f;
-  padding: 10px;
   border: 1px solid #779d77;
   border-radius: 6px;
-  margin-top: 20px;
-  margin-bottom: 30px;
-
+  padding: 10px;
+  margin: 20px 0 30px;
+  background: transparent url(./icons/expand_more.svg) no-repeat;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: transparent;
-  background-image: url(./icons/expand_more.svg);
-  background-repeat: no-repeat;
-  background-position-x: 466px;
-  background-position-y: 18px;
 }
 
-.form__group:hover {
+.form__group {
+  background-position: 466px 18px;
+}
+
+
+.input__count__parametr select {
+  background-position: 206px 18px;
+}
+
+.input__count__parametr input {
+  background-image: none;
+}
+
+.form__group:hover,
+.input__count__parametr select:hover,
+.input__count__parametr input:hover {
   border-color: #0c340c;
   opacity: 0.9;
   cursor: pointer;
@@ -147,9 +168,9 @@ ul {
 .radio__group {
   display: flex;
   gap: 12px;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin: 20px 0 30px;
 }
+
 
 .form__radio__btn {
   display: flex;
@@ -158,14 +179,12 @@ ul {
   gap: 8px;
 }
 
+
 .form__radio__btn input[type="radio"] {
   height: 20px;
   width: 20px;
   accent-color: #779d77;
   margin: 0px;
-}
-
-.form__radio__btn input[type="radio"]:hover {
   cursor: pointer;
 }
 
@@ -179,46 +198,6 @@ ul {
   margin-bottom: 30px;
 }
 
-.input__count__parametr input {
-  box-sizing: border-box;
-  height: 52px;
-  width: 240px;
-  font-size: 15px;
-  color: #9f9f9f;
-  border: 1px solid #779d77;
-  border-radius: 6px;
-  padding: 10px;
-}
-
-.input__count__parametr input:hover {
-  border-color: #0c340c;
-  opacity: 0.9;
-  cursor: pointer;
-}
-
-.input__count__parametr select {
-  font-size: 15px;
-  color: #9f9f9f;
-  border: 1px solid #779d77;
-  border-radius: 6px;
-  width: 240px;
-  height: 52px;
-  padding: 10px;
-
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: transparent;
-  background-image: url(./icons/expand_more.svg);
-  background-repeat: no-repeat;
-  background-position-x: 206px;
-  background-position-y: 18px;
-}
-
-.input__count__parametr select:hover {
-  border-color: #0c340c;
-  opacity: 0.9;
-  cursor: pointer;
-}
 
 .reset__and__calculate {
   display: flex;
@@ -272,15 +251,17 @@ ul {
   color: #ffffff;
 
   background: #779d77;
+
   border-radius: 6px;
   border: none;
 
   transition: opacity 0.3s;
+  cursor: pointer;
 }
 
 .btn:hover {
   opacity: 0.9;
-  cursor: pointer;
+  
 }
 
 .history_content {
@@ -303,10 +284,9 @@ ul {
 }
 
 .history h4 {
-  margin: 0px;
+  margin: 0 0 20px;
   font-size: 20px;
   font-weight: 500;
-  margin-bottom: 20px;
 }
 
 .history__item {
