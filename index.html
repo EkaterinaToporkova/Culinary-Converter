@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,7 @@
       <div class="container">
         <div class="logo">
           <div class="header__logo">
-            <img src="icons/logo.svg" alt="logo" loading="lazy" />
+            <img src="icons/logo.svg" alt="Логотип" loading="lazy" />
           </div>
           <p>Перевод мер и весов для кулинарных рецептов</p>
         </div>
@@ -62,7 +62,7 @@
                         <input
                           id="radio-1"
                           type="radio"
-                          name="radio"
+                          name="parameter"
                           value="1"
                           checked
                         />
@@ -73,7 +73,7 @@
                         <input
                           id="radio-2"
                           type="radio"
-                          name="radio"
+                          name="parameter"
                           value="2"
                         />
                         <label for="radio-2">Объем</label>
@@ -83,7 +83,7 @@
                     <!-- Количество -->
                     <label for="count"><p>Количество</p></label>
                     <div class="input__count__parametr">
-                      <input type="number" min="0" id="count" value="0" />
+                      <input type="number" min="0" id="count" value="0" name="count" />
                       <select id="parameter_select">
                         <option disabled selected value>Мера</option>
                         <option value="parameter_gram">Грамм</option>
@@ -94,8 +94,8 @@
                     </div>
                     <!--  -->
                     <!-- Во что конвертировать -->
-                    <label for="product"><p>Во что пересчитать</p></label>
-                    <select id="product" class="form__group">
+                    <label for="conversion"><p>Во что пересчитать</p></label>
+                    <select id="conversion" class="form__group">
                       <option disabled selected value>
                         Мера или мерный продукт
                       </option>
@@ -133,7 +133,7 @@
                 </ul>
                 <div class="reset__btn">
                   <img src="./icons/close.svg" alt="" />
-                  <input type="reset" value="Очистить" id="reset" />
+                  <input type="reset" value="Очистить историю" id="reset-history" />
                 </div>
               </div>
             </div>
