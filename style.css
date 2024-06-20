@@ -87,7 +87,6 @@ ul {
 
 /* Конвертер */
 
-
 .calculator {
   display: flex;
   flex-direction: column;
@@ -100,11 +99,10 @@ ul {
   font-weight: 700;
   border: 0;
   margin: 0px;
-  padding: 0px; 
+  padding: 0px;
   line-height: 1;
   flex: 0 0 auto;
 }
-
 
 .fields_input {
   padding: 40px 40px;
@@ -115,7 +113,6 @@ ul {
   font-weight: 500;
   margin-block: 0;
 }
-
 
 .input__count__parametr input {
   box-sizing: border-box;
@@ -140,6 +137,7 @@ ul {
   padding: 10px;
   margin: 20px 0 30px;
   background: transparent url(./icons/expand_more.svg) no-repeat;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -147,7 +145,6 @@ ul {
 .form__group {
   background-position: 466px 18px;
 }
-
 
 .input__count__parametr select {
   background-position: 206px 18px;
@@ -171,14 +168,12 @@ ul {
   margin: 20px 0 30px;
 }
 
-
 .form__radio__btn {
   display: flex;
   width: 244px;
   align-items: center;
   gap: 8px;
 }
-
 
 .form__radio__btn input[type="radio"] {
   height: 20px;
@@ -197,7 +192,6 @@ ul {
   margin-top: 20px;
   margin-bottom: 30px;
 }
-
 
 .reset__and__calculate {
   display: flex;
@@ -261,7 +255,6 @@ ul {
 
 .btn:hover {
   opacity: 0.9;
-  
 }
 
 .history_content {
@@ -280,7 +273,16 @@ ul {
   padding: 30px;
   box-shadow: 0px 5px 10px 0px rgba(39, 23, 0, 0.2);
   margin-top: 71px;
-  
+  position: relative; 
+}
+
+
+.overlay-image {
+  position: absolute;
+  top: -15px;
+  left: 250px;
+  z-index: 10; 
+  pointer-events: none; /* Чтобы изображение не мешало взаимодействию с другими элементами */
 }
 
 .history h4 {

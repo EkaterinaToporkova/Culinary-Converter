@@ -83,7 +83,13 @@
                     <!-- Количество -->
                     <label for="count"><p>Количество</p></label>
                     <div class="input__count__parametr">
-                      <input type="number" min="0" id="count" value="0" name="count" />
+                      <input
+                        type="number"
+                        min="0"
+                        id="count"
+                        value="0"
+                        name="count"
+                      />
                       <select id="parameter_select">
                         <option disabled selected value>Мера</option>
                         <option value="parameter_gram">Грамм</option>
@@ -125,7 +131,8 @@
               </div>
             </div>
             <div class="history_content">
-              <div class="history ">
+              <div class="history">
+                <img src="./icons/tape.svg" alt="Tape" class="overlay-image">
                 <h4>История</h4>
                 <ul class="history__items">
                   <li class="history__item">2.5 грамм меда = 7,41 ст. л.</li>
@@ -133,7 +140,11 @@
                 </ul>
                 <div class="reset__btn">
                   <img src="./icons/close.svg" alt="" />
-                  <input type="reset" value="Очистить историю" id="reset-history" />
+                  <input
+                    type="reset"
+                    value="Очистить историю"
+                    id="reset-history"
+                  />
                 </div>
               </div>
             </div>
